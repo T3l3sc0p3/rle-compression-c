@@ -4,7 +4,11 @@ A simple C program to compress/decompress file contents using Run-Length Encodin
 
 I wrote this program because this is one of the assignments that my teacher gave me, and I also have some interest, so I decided to publish it on Github
 
+You should also checkout this repo: [crc32sum-c](https://github.com/T3l3sc0p3/crc32sum-c)
+
 ## Compile
+
+First clone this repo to your machine, then `cd` to that repo and run
 
 ```sh
 make
@@ -16,6 +20,14 @@ This project was compiled and succesfully tested on:
 ## Usage
 
 ```txt
+       _                                                        _
+      | |                                                      (_)
+  _ __| | ___ ______ ___ ___  _ __ ___  _ __  _ __ ___  ___ ___ _  ___  _ __  
+ | '__| |/ _ \______/ __/ _ \| '_ ` _ \| '_ \| '__/ _ \/ __/ __| |/ _ \| '_ \ 
+ | |  | |  __/     | (_| (_) | | | | | | |_) | | |  __/\__ \__ \ | (_) | | | |
+ |_|  |_|\___|      \___\___/|_| |_| |_| .__/|_|  \___||___/___/_|\___/|_| |_|
+                                       | |                                    
+                                       |_|                                    
 Usage:
 	./rle-compression [options] [files]
 Options:
