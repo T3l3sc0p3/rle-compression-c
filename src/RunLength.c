@@ -10,8 +10,8 @@ Repository: https://github.com/T3l3sc0p3/rle-compression-c */
 void printUsage();
 void printVersion();
 void printBanner();
-char * RLE(char *input, char t);
-char * RLD(char *input);
+char * RLE(char *data, char t);
+char * RLD(char *data);
 
 int main(int argc, char *argv[]) {
     int encodeFlag = 0, decodeFlag = 0, bannerFlag = 0, helpFlag = 0, versionFlag = 0;
@@ -144,7 +144,7 @@ void printUsage() {
 // Print current version
 void printVersion()
 {
-    printf("rle-compression 0.1\n");
+    printf("rle-compression 0.2\n");
 }
 
 // Just a simple ASCII banner
@@ -162,20 +162,20 @@ void printBanner()
 }
 
 // Run-Length encode
-char * RLE(char *input, char t) {
-    int length = strlen(input), idx = 0, count = 1, i = 0;
+char * RLE(char *data, char t) {
+    int length = strlen(data), idx = 0, count = 1, i = 0;
     char* res = (char*)malloc(2*length+1);
     for (;i < length-1; i++) {
-        if (input[i] == input[i+1]) {
+        if (data[i] == data[i+1]) {
             count++;
         }
         else {
             if (t == 'c') {
-                res[idx++] = input[i];
+                res[idx++] = data[i];
                 idx += sprintf(res + idx, "%d", count);
             } else {
                 idx += sprintf(res + idx, "%d", count);
-                res[idx++] = input[i];
+                res[idx++] = data[i];
             }
             count = 1;
         }
@@ -185,18 +185,18 @@ char * RLE(char *input, char t) {
 }
 
 // Run-length decode
-char * RLD(char *input) {
-    int length = strlen(input), idx = 0, i = 0;
+char * RLD(char *data) {
+    int length = strlen(data), idx = 0, i = 0;
     char* res = (char*)malloc(length + 1);
-    if (isdigit((char)input[0])) {
+    if (isdigit((char)data[0])) {
         // Number+Character encoding
         while (i < length) {
             int count = 0;
-            while (isdigit(input[i])) {
-                count = count * 10 + (input[i] - '0');
+            while (isdigit(data[i])) {
+                count = count * 10 + (data[i] - '0');
                 i++;
             }
-            char c = input[i];
+            char c = data[i];
             res = (char*)realloc(res, idx + count + 1);
             for (int j = 0; j < count; j++) {
                 res[idx++] = c;
@@ -206,10 +206,10 @@ char * RLD(char *input) {
     } else {
         // Character+Number encoding
         while (i < length) {
-            char c = input[i++];
+            char c = data[i++];
             int count = 0;
-            while (isdigit(input[i])) {
-                count = count * 10 + (input[i] - '0');
+            while (isdigit(data[i])) {
+                count = count * 10 + (data[i] - '0');
                 i++;
             }
             res = (char*)realloc(res, idx + count + 1);
