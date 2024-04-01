@@ -1,3 +1,6 @@
+/* Author: Scott (GitHub: T3l3sc0p3)
+Repository: https://github.com/T3l3sc0p3/rle-compression-c */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
