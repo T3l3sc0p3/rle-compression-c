@@ -16,6 +16,7 @@ This project was compiled and succesfully tested on:
 ## Usage
 
 ```txt
+Usage:
 	./rle-compression [options] [files]
 Options:
 	-b,  --banner		Display the banner
