@@ -31,6 +31,6 @@ Examples:
 
 ## License
 
-This project is published under [MIT License][license].
+This project is published under [MIT License][license]
 
 [license]: https://github.com/T3l3sc0p3/rle-compression-c/blob/master/LICENSE
