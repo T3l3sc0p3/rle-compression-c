@@ -36,6 +36,7 @@ While creating this program, I utilized various websites as resources. I hope th
 - [Run Length Encoding and Decoding](https://www.geeksforgeeks.org/run-length-encoding/)
 - [Run-Length Encoding (RLE) Algorithm: Step-by-Step Guide](https://medium.com/@ishifoev/run-length-encoding-rle-algorithm-step-by-step-guide-b0b89f3a4a9f)
 - [Online rle-compression tool from dcode.fr](https://www.dcode.fr/rle-compression)
+- [ASCII banner](https://manytools.org/hacker-tools/ascii-banner/)
 
 ## License
 
