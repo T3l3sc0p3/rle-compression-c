@@ -4,8 +4,6 @@ A simple C program to compress/decompress file contents using Run-Length Encodin
 
 I wrote this program because this is one of the assignments that my teacher gave me, and I also have some interest, so I decided to publish it on Github
 
-You should also checkout this repo: [crc32sum-c](https://github.com/T3l3sc0p3/crc32sum-c)
-
 ## Compile
 
 First clone this repo to your machine, then `cd` to that repo and run
